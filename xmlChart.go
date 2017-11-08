@@ -220,6 +220,10 @@ type cSpPr struct {
 	EffectLst *string     `xml:"a:effectLst"`
 }
 
+type cMajorGridlines struct {
+	SpPr *cSpPr `xml:"c:spPr"`
+}
+
 // aSp3D (3-D Shape Properties) directly maps the a:sp3d element. This element
 // defines the 3D properties associated with a particular shape in DrawingML.
 // The 3D properties which can be applied to a shape are top and bottom bevels,
@@ -321,23 +325,24 @@ type cCharts struct {
 
 // cAxs directly maps the c:catAx and c:valAx element.
 type cAxs struct {
-	AxID          *attrValInt    `xml:"c:axId"`
-	Scaling       *cScaling      `xml:"c:scaling"`
-	Delete        *attrValBool   `xml:"c:delete"`
-	AxPos         *attrValString `xml:"c:axPos"`
-	NumFmt        *cNumFmt       `xml:"c:numFmt"`
-	MajorTickMark *attrValString `xml:"c:majorTickMark"`
-	MinorTickMark *attrValString `xml:"c:minorTickMark"`
-	TickLblPos    *attrValString `xml:"c:tickLblPos"`
-	SpPr          *cSpPr         `xml:"c:spPr"`
-	TxPr          *cTxPr         `xml:"c:txPr"`
-	CrossAx       *attrValInt    `xml:"c:crossAx"`
-	Crosses       *attrValString `xml:"c:crosses"`
-	CrossBetween  *attrValString `xml:"c:crossBetween"`
-	Auto          *attrValBool   `xml:"c:auto"`
-	LblAlgn       *attrValString `xml:"c:lblAlgn"`
-	LblOffset     *attrValInt    `xml:"c:lblOffset"`
-	NoMultiLvlLbl *attrValBool   `xml:"c:noMultiLvlLbl"`
+	AxID           *attrValInt      `xml:"c:axId"`
+	Scaling        *cScaling        `xml:"c:scaling"`
+	Delete         *attrValBool     `xml:"c:delete"`
+	AxPos          *attrValString   `xml:"c:axPos"`
+	NumFmt         *cNumFmt         `xml:"c:numFmt"`
+	MajorTickMark  *attrValString   `xml:"c:majorTickMark"`
+	MinorTickMark  *attrValString   `xml:"c:minorTickMark"`
+	TickLblPos     *attrValString   `xml:"c:tickLblPos"`
+	MajorGridlines *cMajorGridlines `xml:"c:majorGridlines"`
+	SpPr           *cSpPr           `xml:"c:spPr"`
+	TxPr           *cTxPr           `xml:"c:txPr"`
+	CrossAx        *attrValInt      `xml:"c:crossAx"`
+	Crosses        *attrValString   `xml:"c:crosses"`
+	CrossBetween   *attrValString   `xml:"c:crossBetween"`
+	Auto           *attrValBool     `xml:"c:auto"`
+	LblAlgn        *attrValString   `xml:"c:lblAlgn"`
+	LblOffset      *attrValInt      `xml:"c:lblOffset"`
+	NoMultiLvlLbl  *attrValBool     `xml:"c:noMultiLvlLbl"`
 }
 
 // cScaling directly maps the c:scaling element. This element contains
