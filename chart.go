@@ -765,7 +765,7 @@ func (f *File) drawPlotAreaValAx() []*cAxs {
 			MajorTickMark: &attrValString{Val: "none"},
 			MinorTickMark: &attrValString{Val: "none"},
 			TickLblPos:    &attrValString{Val: "nextTo"},
-			SpPr:          f.drawPlotAreaSpPr(),
+			MajorGridlines: &cMajorGridlines{SpPr: f.drawPlotAreaSpPr()},
 			TxPr:          f.drawPlotAreaTxPr(),
 			CrossAx:       &attrValInt{Val: 754001152},
 			Crosses:       &attrValString{Val: "autoZero"},
@@ -819,7 +819,7 @@ func (f *File) drawPlotAreaTxPr() *cTxPr {
 						SchemeClr: &aSchemeClr{
 							Val:    "tx1",
 							LumMod: &attrValInt{Val: 15000},
-							LumOff: &attrValInt{Val: 85000},
+							LumOff: &attrValInt{Val: 35000},
 						},
 					},
 					Latin: &aLatin{Typeface: "+mn-lt"},
